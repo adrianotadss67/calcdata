@@ -1,6 +1,27 @@
 <html>
 <head>
- <link rel="stylesheet" href="styles.css">
+<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="manifest" href="manifest.json">
+   <link rel="stylesheet" href="style.css">
+  <meta name="theme-color" content="#1e1e1e">
+   
+
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('DOMContentLoaded', function () {
+        navigator.serviceWorker.register('service-worker.js')
+          .then(function (registration) {
+            console.log('Service Worker registrado com sucesso:', registration.scope);
+          })
+          .catch(function (error) {
+            console.log('Falha ao registrar o Service Worker:', error);
+          });
+      });
+    }
+  </script>
+  <title>Calculadora de Datas</title>
 
 </head>
 <body>
